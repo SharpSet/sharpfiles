@@ -9,8 +9,8 @@ services:
       - mcaq_sharex:/sharex/files/
 
     environment:
-      - SECRET=${SHAREXPASS}
-      - DOMAIN=${DOMAIN}
+      - SECRET=${SHAREXPASS:?err}
+      - DOMAIN=${DOMAIN:?err}
 
     restart: always
 
