@@ -4,7 +4,6 @@ RUN apt update -y && apt install -y nginx
 
 COPY ./buildfiles/start.sh /start.sh
 RUN chmod +x /start.sh
-RUN chmod -R 777 /sharpnet
 
 COPY ./code/sharex.php /sharex/files.php
 COPY ./sharpnet/nginx.conf /sharpnet/nginx.conf
