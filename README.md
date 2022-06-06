@@ -4,39 +4,51 @@
 
 A custom file uploader using [Sharex](https://getsharex.com/) designed to work with [SharpNet](https://github.com/Sharpz7/sharpnet) and [SharpCD](https://github.com/Sharpz7/sharpcd)
 
-# Example Sharex Config
+# Example Diagram
 
-![](https://files.mcaq.me/uhvo.png)
+![](https://files.mcaq.me/730rr.png)
 
 # Installation
 
-- Make sure [SharpCD](https://github.com/Sharpz7/sharpcd) and [SharpNet](https://github.com/Sharpz7/sharpnet) have been installed.
-
-- Create a sharpcd.yml file like the following:
-
-```yml
-version: 1
-
-tasks:
-  sharpfiles_task:
-    name: SharpFiles Server
-    envfile: .env
-    type: docker
-    sharpurl: https://mydomain.com:5666
-    giturl: https://raw.githubusercontent.com/Sharpz7/
-    compose: /sharpfiles/main/docker-compose.yml
-```
+- Make sure [SharpCD](https://github.com/Sharpz7/sharpcd) havs been installed.
 
 - Ensure the enviromental variables have been set in an enviromental variable file:
 
 ```env
 SECRET=Secret123
 DOMAIN=mydomain.com
+
+#=============================
+
+# sharpnet ports
+HTTP_PORT=80
+HTTPS_PORT=443
+
+# Sharpnet gmail login credentials
+# for sending errors
+MAILPASS=email_password
+SENDER_EMAIL=email
+
+# Email that problems will be sent to
+RECEIVER_EMAIL=email@domain1.com
+
+# Domain for certificates
+DOMAIN=domain2.com
+
+# For Devs only
+DEV=FALSE
+NETWORK=sharpnet
 ```
 
-- Run `sharpcd` to get started!
+**(See the [sharpnet](https://github.com/Sharpz7/sharpnet) documentation for more information)**
 
-## Help
+- Run the following command to install the postgres:
+
+```bash
+sharpcd --remotefile https://raw.githubusercontent.com/Sharpz7/sharpfiles/main/.sharpcd/sharpcd.yml
+```
+
+## Help with Sharex
 
 A guide to setting up custom uploaders in Sharex can be found [here](https://getsharex.com/docs/custom-uploader).
 
@@ -46,7 +58,5 @@ A guide to setting up custom uploaders in Sharex can be found [here](https://get
 
 ## TODO
 
-- Remove sharpnet domain and replace to Env var
-- Remove site.conf domain
 - Remove "mcaq.me" mention in docker-compose file
 

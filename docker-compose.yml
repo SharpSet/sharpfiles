@@ -6,7 +6,7 @@ services:
     image: sharp6292/sharpfiles
 
     volumes:
-      - mcaq_sharex:/sharex/files/
+      - sharpfiles_data:/sharex/files/
 
     environment:
       - SECRET=${SHAREXPASS:?err}
@@ -15,7 +15,7 @@ services:
     restart: always
 
 volumes:
-  mcaq_sharex:
+  sharpfiles_data:
     external: True
 
 networks:
