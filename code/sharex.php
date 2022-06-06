@@ -2,7 +2,7 @@
 
 error_reporting(E_ALL);
 $secret_key = $_ENV["SECRET"]; //Set this as your secret key, to prevent others uploading to your server.
-$domain_url = "https://files.".$_ENV['DOMAIN']."/";
+$domain_url = "https://".$_ENV['DOMAIN']."/";
 $lengthofstring = 5; //Length of the file name
 
 function RandomString($length) {
