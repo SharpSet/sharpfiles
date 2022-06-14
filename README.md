@@ -1,25 +1,21 @@
-[![CircleCI](https://circleci.com/gh/Sharpz7/sharpfiles/tree/main.svg?style=svg)](https://circleci.com/gh/Sharpz7/sharpfiles/tree/main)
+[![CircleCI](https://circleci.com/gh/SharpSet/sharpfiles/tree/main.svg?style=svg)](https://circleci.com/gh/SharpSet/sharpfiles/tree/main)
 
-# Sharpfiles
+![Sharpfiles](https://files.mcaq.me/843kh.png)
+# File Uploader
 
-A custom file uploader using [Sharex](https://getsharex.com/) designed to work with [SharpNet](https://github.com/Sharpz7/sharpnet) and [SharpCD](https://github.com/Sharpz7/sharpcd)
+A custom file uploader using [Sharex](https://getsharex.com/) designed to work with [SharpNet](https://github.com/SharpSet/sharpnet) and [SharpCD](https://github.com/SharpSet/sharpcd)
 
 # Example Diagram
 
 ![](https://files.mcaq.me/730rr.png)
 
-# Installation
+# Install Dependencies
 
-- Make sure [SharpCD](https://github.com/Sharpz7/sharpcd) havs been installed.
+- Make sure [SharpCD](https://github.com/SharpSet/sharpcd) havs been installed.
 
 - Ensure the enviromental variables have been set in an enviromental variable file:
 
 ```env
-SECRET=Secret123
-DOMAIN=mydomain.com
-
-#=============================
-
 # sharpnet ports
 HTTP_PORT=80
 HTTPS_PORT=443
@@ -40,12 +36,29 @@ DEV=FALSE
 NETWORK=sharpnet
 ```
 
-**(See the [sharpnet](https://github.com/Sharpz7/sharpnet) documentation for more information)**
+**(See the [sharpnet](https://github.com/SharpSet/sharpnet) documentation for more information)**
 
-- Run the following command to install the postgres:
+- Run the following command to install the dependencies:
 
 ```bash
-sharpcd --remotefile https://raw.githubusercontent.com/Sharpz7/sharpfiles/main/.sharpcd/sharpcd.yml
+sharpcd --remotefile https://raw.githubusercontent.com/SharpSet/sharpfiles/main/.sharpcd/depencencies.yml
+```
+
+# Installation
+
+- Make sure [SharpCD](https://github.com/SharpSet/sharpcd) havs been installed.
+
+- Ensure the enviromental variables have been set in an enviromental variable file:
+
+```env
+SECRET=Secret123
+SHARPFILES_DOMAIN=mydomain.com
+```
+
+- Run the following command to install the SharpFiles:
+
+```bash
+sharpcd --remotefile https://raw.githubusercontent.com/SharpSet/sharpfiles/main/.sharpcd/sharpcd.yml
 ```
 
 ## Help with Sharex
@@ -55,8 +68,4 @@ A guide to setting up custom uploaders in Sharex can be found [here](https://get
 ## Maintainers
 
 - [Adam McArthur](https://adam.mcaq.me)
-
-## TODO
-
-- Remove "mcaq.me" mention in docker-compose file
 

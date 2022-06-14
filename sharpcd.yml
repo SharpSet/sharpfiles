@@ -6,5 +6,5 @@ tasks:
     envfile: .env
     type: docker
     sharpurl: https://mcaq.me:5666
-    giturl: https://raw.githubusercontent.com/Sharpz7/
+    giturl: https://raw.githubusercontent.com/SharpSet/
     compose: /sharpfiles/main/docker-compose.yml

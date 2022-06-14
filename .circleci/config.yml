@@ -15,7 +15,7 @@ jobs:
       - run:
           name: "Setup Env"
           command: |
-            echo "DOMAIN=${DOMAIN}" > .env
+            echo "DOMAIN=${SHARPFILES_DOMAIN}" > .env
             echo "SHAREXPASS=${SHAREXPASS}" >> .env
 
       - sharpcd/deploy
@@ -24,7 +24,7 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - docker/build:
+      - docker/build_wait:
           context: General
           image: sharp6292/sharpfiles:latest
 
@@ -32,7 +32,7 @@ workflows:
       - deploy:
           context: General
           requires:
-            - docker/build
+            - docker/build_wait
 
           filters:
             branches:
