@@ -1,0 +1,9 @@
+version: 1
+
+envfile: .env
+
+scripts:
+  docker: |
+    docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    docker build --network=host -t sharp6292/sharpfiles .
+    docker push sharp6292/sharpfiles
